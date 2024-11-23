@@ -7,7 +7,7 @@ Obs: Copiei apenas o template do projeto que foi feito em React, só que em Angu
 
 Link da aula do curso dele:
 
-https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s
+<a href="[URL](https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s)" target="_blank">Clique para acessar</a>
 
 ## Funcionalidades
 - Cadastro de Projetos com:
