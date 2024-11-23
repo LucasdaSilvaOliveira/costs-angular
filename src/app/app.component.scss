@@ -1,10 +1,12 @@
 .div-container {
-    // height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
+    position: relative;
 
     .div-container-center {
-        height: 80vh;
+        height: auto;
+        padding-bottom: 150px;
     }
 }
