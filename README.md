@@ -32,4 +32,4 @@ https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s
 - Entity Framework para gerenciamento de banco de dados
 
 ### Banco de Dados
-- SQL Server (ou outro banco de dados a ser definido)
+- SQL Server
