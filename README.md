@@ -1,25 +1,35 @@
-# Projeto Angular com Backend em C#
+# Gerenciador de Projetos
 
 ## Descrição
-Este é um projeto desenvolvido com **Angular** para o frontend e será integrado com um backend construído em **C#**. O objetivo é criar uma aplicação completa com funcionalidades modernas, utilizando boas práticas de desenvolvimento tanto no frontend quanto no backend.
+Este é um projeto de **Gerenciamento de Projetos** que permite o cadastro e controle de projetos com seus respectivos orçamentos e serviços associados. Esse template é a cópia do template do projeto do curso de React do Matheus Battisti - Hora de Codar.
+
+Obs: Copiei apenas o template do projeto que foi feito em React, só que em Angular, pois não tenho criatividade para criar bons templates do zero.
+
+Link da aula do curso dele:
+
+https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s
+
+## Funcionalidades
+- Cadastro de Projetos com:
+  - Nome do projeto.
+  - Orçamento total.
+- Cadastro de Serviços para os projetos, incluindo:
+  - Nome do serviço.
+  - Custo do serviço.
+- Regras de Negócio:
+  - A soma dos custos dos serviços de um projeto **não pode ultrapassar o orçamento total** definido para ele.
+- Listagem e gerenciamento de projetos e serviços.
 
 ## Tecnologias Utilizadas
 
 ### Frontend
-- Angular
+- **Angular**
 - HTML5, CSS3 e TypeScript
-- Bootstrap (ou outra biblioteca de estilos, se aplicável)
 
 ### Backend
-- C# com .NET
-- ASP.NET Core (API RESTful)
-- Entity Framework para integração com banco de dados (planejado)
+- **C# com .NET**
+- ASP.NET Core para criação de API RESTful
+- Entity Framework para gerenciamento de banco de dados
 
 ### Banco de Dados
-- SQL Server (ou outro banco de dados que será definido)
-
-## Funcionalidades Planejadas
-- [ ] Sistema de autenticação (JWT)
-- [ ] CRUD completo para gerenciar entidades do sistema
-- [ ] Integração com APIs externas (se necessário)
-- [ ] Validação de dados no backend e no frontend
+- SQL Server (ou outro banco de dados a ser definido)
