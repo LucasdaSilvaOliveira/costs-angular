@@ -13,8 +13,10 @@ https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s
 - Cadastro de Projetos com:
   - Nome do projeto.
   - Orçamento total.
+  - Tipo de projeto.
 - Cadastro de Serviços para os projetos, incluindo:
   - Nome do serviço.
+  - Descrição do serviço.
   - Custo do serviço.
 - Regras de Negócio:
   - A soma dos custos dos serviços de um projeto **não pode ultrapassar o orçamento total** definido para ele.
