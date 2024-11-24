@@ -1,5 +1,24 @@
 <div>
-    <div>
-        <h1>Formulário de edição</h1>
-    </div>
+    <form>
+        <div class="form-group mt-3">
+            <label for="project-name">Nome do projeto:</label>
+            <input id="project-name" type="text" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label for="project-budget">Orçamento do projeto:</label>
+            <input id="project-budget" type="number" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label for="project-category">Selecione a categoria:</label>
+            <select id="project-category" class="form-control">
+                <option value="">Selecione uma opção</option>
+                <option value="">Infra</option>
+                <option value="">Desenvolvimento</option>
+                <option value="">Design</option>
+                <option value="">Planejamento</option>
+            </select>
+        </div>
+
+        <button class="btn btn-dark mt-3">Concluir Edição</button>
+    </form>
 </div>
