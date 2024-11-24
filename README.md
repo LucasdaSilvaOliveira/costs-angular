@@ -26,7 +26,7 @@ https://www.youtube.com/watch?v=OinwLJg8k88&list=LL&index=1&t=65s
 
 ### Frontend
 - **Angular**
-- HTML5, CSS3 e TypeScript
+- HTML5, SCSS e TypeScript
 - Bootstrap
 
 ### Backend
