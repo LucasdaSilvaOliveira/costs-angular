@@ -1,25 +1,29 @@
 <div class="div-manage">
     <div>
         <h1>Projeto: Desenvolvimento do site</h1>
-        <button class="btn btn-dark">Editar Projeto</button>
+        <button (click)="ToggleEditProjectForms()" class="btn btn-dark">{{toggleEditProjectForms ? "Fechar" : "Editar Projeto"}}</button>
     </div>
 
-    <div>
+    <div *ngIf="!toggleEditProjectForms">
         <p>Categoria: <span>Desenvolvimento</span></p>
         <p>Total do orçamento: <span>R$3000</span></p>
         <p>Total utilizado: <span>R$0</span></p>
     </div>
 
-    <div>
+    <div *ngIf="toggleEditProjectForms">
         <app-edit></app-edit>
     </div>
 
     <br>
     <hr>
 
-    <div>
+    <div class="add-service-header">
         <h1>Adicione um serviço:</h1>
-        <button class="btn btn-dark">Adicionar Serviço</button>
+        <button (click)="ToggleServiceForms()" class="btn btn-dark">{{toggleServiceForms ? "Fechar" : "Adicionar Serviço"}}</button>
+    </div>
+
+    <div *ngIf="toggleServiceForms">
+        <app-create-service></app-create-service>
     </div>
 
     <br>
