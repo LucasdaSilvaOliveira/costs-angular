@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProjectRepository } from '../shared/repository/project-repository';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'costs-angular';
+
+  constructor(private repository: ProjectRepository) {
+    repository.GetProjects()
+  }
+
 }
