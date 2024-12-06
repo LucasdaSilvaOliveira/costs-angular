@@ -3,8 +3,21 @@
         <h1 class="fw-bold">Meus Projetos</h1>
         <a class="btn btn-dark" href="project/create">Criar projeto</a>
     </div>
+
+  
     <div class="mt-5 list-project-card">
-        <div class="card project-card">
+        <div *ngIf="ProjectList == undefined" class="text-secondary">Carregando...</div>
+        <div *ngFor="let project of ProjectList;" class="card project-card">
+            <h1>{{project.name}}</h1>
+            <p>Orçamento: <span>{{project.budget}}</span></p>
+            <p>{{project.category}}</p>
+            <div>
+                <a href="">Gerenciar</a>
+                <a href="">Excluir</a>
+            </div>
+        </div>
+
+        <!-- <div class="card project-card">
             <h1>Desenvolvimento do novo site</h1>
             <p>Orçamento: <span>R$3000</span></p>
             <p>Desenvolvimento</p>
@@ -39,6 +52,6 @@
                 <a href="">Gerenciar</a>
                 <a href="">Excluir</a>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

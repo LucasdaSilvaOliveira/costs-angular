@@ -1,6 +1,6 @@
-import { Injectable, NgModule } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Variables } from "../variables";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { catchError, Observable, throwError } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
@@ -17,18 +17,10 @@ export class ProjectRepository {
         responseType: "json",
       })
       .pipe(
-      // catchError(error => {
-      //   console.error('Error fetching JSON data:', error);
-      //   return throwError(()=> new Error('Something went wrong; please try again later.'));
-      // })
+      catchError(error => {
+        console.error('Error fetching JSON data:', error);
+        return throwError(()=> new Error('Something went wrong; please try again later.'));
+      })
     );
   }
-
-  // GetProjects() {
-  //     this.http.get(`${this.URL}api/Project/get-all`).subscribe({
-  //         next: projects => {
-  //             console.log(projects)
-  //         }
-  //     });
-  // }
 }
