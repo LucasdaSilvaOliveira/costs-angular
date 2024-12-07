@@ -1,12 +1,12 @@
 <div class="div-manage">
     <div>
-        <h1>Projeto: Desenvolvimento do site</h1>
+        <h1>Projeto: {{project.name}}</h1>
         <button (click)="ToggleEditProjectForms()" class="btn btn-dark">{{toggleEditProjectForms ? "Fechar" : "Editar Projeto"}}</button>
     </div>
 
     <div *ngIf="!toggleEditProjectForms">
-        <p>Categoria: <span>Desenvolvimento</span></p>
-        <p>Total do orçamento: <span>R$3000</span></p>
+        <p>Categoria: <span>{{project.category}}</span></p>
+        <p>Total do orçamento: <span>R${{project.budget}}</span></p>
         <p>Total utilizado: <span>R$0</span></p>
     </div>
 
