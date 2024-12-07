@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProjectRepository } from '../../../shared/repository/project-repository';
 import { Project } from '../../../dtos/project';
 import { CommonModule } from '@angular/common';
@@ -10,17 +10,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list-projects.component.html',
   styleUrl: './list-projects.component.scss'
 })
-export class ListProjectsComponent {
+export class ListProjectsComponent implements OnInit {
 
-  ProjectList!: Project[];
+  projectList!: Project[];
 
-  constructor(private repository: ProjectRepository) {
-    repository.GetProjects().subscribe({
+  constructor(private repository: ProjectRepository) { }
+
+  ngOnInit(): void {
+    this.repository.GetProjects().subscribe({
       next: (data: Project[]) => {
-        this.ProjectList = data;
+        this.projectList = data;
       }
     })
-
   }
-
 }
