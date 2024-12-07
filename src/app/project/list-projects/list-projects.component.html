@@ -13,7 +13,7 @@
             <p>{{project.category}}</p>
             <div>
                 <a href="project/manage/{{project.id}}">Gerenciar</a>
-                <a href="">Excluir</a>
+                <button (click)="RemoveProject(project.id)">Excluir</button>
             </div>
         </div>
     </div>

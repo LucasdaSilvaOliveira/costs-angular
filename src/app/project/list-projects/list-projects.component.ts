@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectRepository } from '../../../shared/repository/project-repository';
 import { Project } from '../../../dtos/project';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-projects',
@@ -14,7 +15,7 @@ export class ListProjectsComponent implements OnInit {
 
   projectList!: Project[];
 
-  constructor(private repository: ProjectRepository) { }
+  constructor(private repository: ProjectRepository, private route: Router) { }
 
   ngOnInit(): void {
     this.repository.GetProjects().subscribe({
@@ -22,5 +23,11 @@ export class ListProjectsComponent implements OnInit {
         this.projectList = data;
       }
     })
+  }
+
+  RemoveProject(id: number) {
+    this.repository.DeleteProject(id).subscribe();
+    // this.route.navigateByUrl("project/list-projects");
+    window.location.reload();
   }
 }

@@ -37,4 +37,14 @@ export class ProjectRepository {
         })
       );
   }
+
+  DeleteProject(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.URL}api/Project/delete/${id}`)
+    .pipe(
+      catchError(error => {
+        console.error('Error delete:', error);
+        return throwError(() => new Error('Something went wrong; please try again later.'));
+      })
+    )
+  }
 }
