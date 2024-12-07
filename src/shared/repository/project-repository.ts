@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Variables } from "../variables";
 import { HttpClient } from "@angular/common/http";
 import { catchError, Observable, throwError } from "rxjs";
+import { Project } from "../../dtos/project";
 
 @Injectable({ providedIn: 'root' })
 export class ProjectRepository {
@@ -11,16 +12,29 @@ export class ProjectRepository {
     this.URL = new Variables().BaseURL;
   }
 
-  GetProjects(): Observable<any> {
-    return this.http.get<any>(`${this.URL}api/Project/get-all`,
+  GetProjects(): Observable<Project[]> {
+    return this.http.get<Project[]>(`${this.URL}api/Project/get-all`,
       {
         responseType: "json",
       })
       .pipe(
-      catchError(error => {
-        console.error('Error fetching JSON data:', error);
-        return throwError(()=> new Error('Something went wrong; please try again later.'));
+        catchError(error => {
+          console.error('Error fetching JSON data:', error);
+          return throwError(() => new Error('Something went wrong; please try again later.'));
+        })
+      );
+  }
+
+  GetProjectById(id: number): Observable<Project> {
+    return this.http.get<Project>(`${this.URL}api/Project/get-by-id/${id}`,
+      {
+        responseType: "json",
       })
-    );
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching in Search By Id JSON Data:', error);
+          return throwError(() => new Error('Something went wrong; please try again later.'));
+        })
+      );
   }
 }
