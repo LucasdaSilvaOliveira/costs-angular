@@ -27,7 +27,6 @@ export class ListProjectsComponent implements OnInit {
 
   RemoveProject(id: number) {
     this.repository.DeleteProject(id).subscribe();
-    // this.route.navigateByUrl("project/list-projects");
     window.location.reload();
   }
 }
