@@ -6,13 +6,13 @@
 
   
     <div class="mt-5 list-project-card">
-        <div *ngIf="ProjectList == undefined" class="text-secondary">Carregando...</div>
-        <div *ngFor="let project of ProjectList;" class="card project-card">
+        <div *ngIf="projectList == undefined" class="text-secondary">Carregando...</div>
+        <div *ngFor="let project of projectList;" class="card project-card">
             <h1>{{project.name}}</h1>
             <p>Orçamento: <span>{{project.budget}}</span></p>
             <p>{{project.category}}</p>
             <div>
-                <a href="">Gerenciar</a>
+                <a href="project/manage/{{project.id}}">Gerenciar</a>
                 <a href="">Excluir</a>
             </div>
         </div>
