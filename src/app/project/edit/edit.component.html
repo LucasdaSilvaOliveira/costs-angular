@@ -1,21 +1,22 @@
 <div>
     <form>
+        <input type="hidden" value={{projectValues.id}}>
         <div class="form-group mt-3">
             <label for="project-name">Nome do projeto:</label>
-            <input id="project-name" type="text" class="form-control">
+            <input value={{projectValues.name}} id="project-name" type="text" class="form-control">
         </div>
         <div class="form-group mt-3">
             <label for="project-budget">Orçamento do projeto:</label>
-            <input id="project-budget" type="number" class="form-control">
+            <input value={{projectValues.budget}} id="project-budget" type="number" class="form-control">
         </div>
         <div class="form-group mt-3">
             <label for="project-category">Selecione a categoria:</label>
-            <select id="project-category" class="form-control">
+            <select value={{projectValues.category}} id="project-category" class="form-control">
                 <option value="">Selecione uma opção</option>
-                <option value="">Infra</option>
-                <option value="">Desenvolvimento</option>
-                <option value="">Design</option>
-                <option value="">Planejamento</option>
+                <option value="Infra">Infra</option>
+                <option value="Desenvolvimento">Desenvolvimento</option>
+                <option value="Design">Design</option>
+                <option value="Planejamento">Planejamento</option>
             </select>
         </div>
 
