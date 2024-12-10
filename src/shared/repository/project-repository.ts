@@ -47,4 +47,14 @@ export class ProjectRepository {
       })
     )
   }
+
+  CreateProject(project: Project): Observable<Project> {
+    return this.http.post<Project>(`${this.URL}api/Project/add`, project)
+    .pipe(
+      catchError(error => {
+        console.error('Error post:', error);
+        return throwError(() => new Error('Something went wrong; please try again later.'));
+      })
+    );;
+  }
 }

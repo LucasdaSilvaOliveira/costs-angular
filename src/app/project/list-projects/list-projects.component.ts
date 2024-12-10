@@ -15,7 +15,7 @@ export class ListProjectsComponent implements OnInit {
 
   projectList!: Project[];
 
-  constructor(private repository: ProjectRepository, private route: Router) { }
+  constructor(private repository: ProjectRepository, private router: Router) { }
 
   ngOnInit(): void {
     this.repository.GetProjects().subscribe({
@@ -23,10 +23,22 @@ export class ListProjectsComponent implements OnInit {
         this.projectList = data;
       }
     })
+
+    // Detectar mudanças na rota
+    this.router.events.subscribe(() => {
+      if (this.router.url.includes('/list')) {
+        this.repository.GetProjects().subscribe({
+          next: (data: Project[]) => {
+            this.projectList = data;
+          }
+        })
+      }
+    });
   }
 
   RemoveProject(id: number) {
-    this.repository.DeleteProject(id).subscribe();
-    window.location.reload();
+    this.repository.DeleteProject(id).subscribe(() => {
+      this.router.navigate(["project/list-projects"]);
+    });
   }
 }
