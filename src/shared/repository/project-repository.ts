@@ -57,4 +57,13 @@ export class ProjectRepository {
       })
     );;
   }
+
+  UpdateProject(id: number, project: Project): Observable<Project> {
+    return this.http.put<Project>(`${this.URL}api/Project/update/${id}`, project).pipe(
+      catchError(error => {
+        console.error('Error update:', error);
+        return throwError(() => new Error('Something went wrong; please try again later.'));
+      })
+    );;
+  }
 }
